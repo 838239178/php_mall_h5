@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build"
+  command = "yarn run build"
   publish = "dist"
   environment = { NODE_VERSION = "16" }
 
@@ -7,6 +7,20 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+[[redirects]]
+  from = "/api/*"
+  to = "http://150.158.82.154/api/"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+
+[[redirects]]
+  from = "/uploads/*"
+  to = "http://150.158.82.154/uploads/"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
 
 # Opting your Website out of Google's FLoC Network
 [[headers]]
