@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .wrap-text {
+    @apply whitespace-pre-wrap overflow-hidden overflow-ellipsis break-words
+    }
+    .hidden-wrap {
+    @apply whitespace-nowrap overflow-hidden overflow-ellipsis
+    }
+}
