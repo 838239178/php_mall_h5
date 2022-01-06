@@ -10,14 +10,14 @@
 
 [[redirects]]
   from = "/api/*"
-  to = "http://150.158.82.154/api/"
+  to = "http://150.158.82.154/api/:splat"
   status = 200
   force = true
   headers = {X-From = "Netlify"}
 
 [[redirects]]
   from = "/uploads/*"
-  to = "http://150.158.82.154/uploads/"
+  to = "http://150.158.82.154/uploads/:splat"
   status = 200
   force = true
   headers = {X-From = "Netlify"}
