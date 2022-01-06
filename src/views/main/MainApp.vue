@@ -8,7 +8,7 @@
         </el-col>
         <el-col :span="4">
           <el-menu mode="horizontal" :default-active="$route.path" router>
-            <el-menu-item index="/main/index" key="0">首页</el-menu-item>
+            <!-- <el-menu-item index="/main/index" key="0">首页</el-menu-item> -->
             <el-menu-item index="/main/search" key="3">搜索</el-menu-item>
           </el-menu>
         </el-col>
