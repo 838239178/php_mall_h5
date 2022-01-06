@@ -2,6 +2,7 @@ version: '3.3'
 services: 
   phpmall_h5:
     build: '.'
+    container_name: vue
     ports:
       - 9090:80
     volumes:
