@@ -18,7 +18,7 @@ _axios.interceptors.request.use(
         delete config.params[k];
       }
     }
-    if (store.state.token) {
+    if (store.state.token && !config.url.match(/^\/api\/charts/)) {
       config.headers['Authorization'] = `Bearer ${store.state.token}`;
     }
     if (config.method == "patch") {

@@ -12,6 +12,7 @@ export default defineConfig({
     AutoImport({
       imports:[
         'vue',
+        'vue-router',
         {
           '@/js/api.js': [
             ['default','api']
@@ -36,12 +37,14 @@ export default defineConfig({
     open: true,
     proxy: {
       '/api': {
-        target: 'http://150.158.82.154/api/',
+        // target: 'http://150.158.82.154/api/',
+        target: 'http://localhost:8000/api/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       },
       '/uploads': {
-        target: 'http://150.158.82.154/',
+        // target: 'http://150.158.82.154/',
+        target: 'http://localhost:8000/',
         changeOrigin: true,
       }
     },

@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import NotFound from '@/views/NotFound.vue'
+import NotFound from '@/views/common/NotFound.vue'
 import main from './module/main'
 import login from './module/login'
 
@@ -21,6 +21,10 @@ const routes = [
     redirect: '/login/login',
     component: ()=>import('@/views/login/LoginApp.vue'),
     children: login
+  },
+  {
+    path: '/charts',
+    component: ()=>import('@/views/common/Charts.vue')
   },
   { path: '/:path(.*)', component: NotFound },
 ]

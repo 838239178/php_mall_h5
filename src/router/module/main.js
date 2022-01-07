@@ -1,7 +1,7 @@
 export default [
   {
     path: 'index',
-    redirect: 'search',
+    redirect: '/main/search',
     // name: 'index',
     // component: () => import('@/views/main/pages/Index.vue')
   },

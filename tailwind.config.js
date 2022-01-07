@@ -17,6 +17,9 @@ module.exports = {
       height: {
         'fit': 'fit-content'
       },
+      fontSize: {
+        'huge': '10rem'
+      },
       minHeight: {
         '9/10': '90%',
         '4/5': '80%',
