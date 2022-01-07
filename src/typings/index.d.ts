@@ -6,6 +6,7 @@ declare namespace Entity {
     }
 
     interface ProductPropKey {
+        id: number,
         propKey: PropKey
         optionValues: string[]
     }

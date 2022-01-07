@@ -6,8 +6,8 @@
         <div
           v-for="v,j in pk.optionValues" :key="'v' + j"
           class="option-card"
-          :class="options[pk.propKey.keyId]?.value === v ? 'bg-orange-400 text-orange-600' : 'bg-orange-100 hover:bg-orange-300 text-orange-400'"
-          @click="setOption(pk.propKey.keyId, v)"
+          :class="options[pk.id]?.value === v ? 'bg-orange-400 text-orange-600' : 'bg-orange-100 hover:bg-orange-300 text-orange-400'"
+          @click="setOption(pk.id, v)"
         >{{ v }}</div>
       </div>
     </div>

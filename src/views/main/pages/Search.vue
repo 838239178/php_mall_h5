@@ -1,7 +1,7 @@
 <template>
   <div class="search-content">
     <div class="cate-selector">
-      <p style="text-align: left;" class="selector-title">所有分类</p>
+      <div style="text-align: left;" class="selector-title">所有分类</div>
       <div class="flex justify-start space-x-4 text-sm my-3"> 
         <span v-for="cat,i in category.lv1" :key="i"
           @click="switchCategory(cat,2)"
@@ -10,7 +10,7 @@
           {{cat.categoryName}}
         </span>
       </div>
-      <div v-if="category.lv2.length > 0" class="flex justify-start space-x-4 text-sm italic my-3 ml-2"> 
+      <div v-if="category.lv2?.length > 0" class="flex justify-start space-x-4 text-sm italic my-3 ml-2"> 
         <span v-for="cat,i in category.lv2" :key="i"
           @click="switchCategory(cat,3)"
           :class="dto.category == cat.categoryId ? 'text-blue-500 hover:text-blue-400' : 'text-gray-500 hover:text-gray-400'"
@@ -18,12 +18,21 @@
           {{cat.categoryName}}
         </span>
       </div>
-      <div v-if="category.lv3.length > 0" class="flex justify-start space-x-4 italic text-sm my-3 ml-4"> 
+      <div v-if="category.lv3?.length > 0" class="flex justify-start space-x-4 italic text-sm my-3 ml-4"> 
         <span v-for="cat,i in category.lv3" :key="i"
           @click="switchCategory(cat)"
           :class="dto.category == cat.categoryId ? 'text-blue-500 hover:text-blue-400' : 'text-gray-500 hover:text-gray-400 '"
           class="underline cursor-pointer">
           {{cat.categoryName}}
+        </span>
+      </div>
+      <div style="text-align: left;" class="selector-title">品牌</div>
+      <div class="flex justify-start space-x-4 text-sm italic my-3 ml-2">
+        <span v-for="brand,i in brands" :key="i"
+          @click="dto.brand = brand.brandId"
+          :class="dto.brand == brand.brandId ? 'text-blue-500 hover:text-blue-400' : 'text-gray-500 hover:text-gray-400'"
+          class="underline cursor-pointer">
+          {{brand.brandName}}
         </span>
       </div>
     </div>
@@ -104,6 +113,7 @@ export default defineComponent({
         lv2: [],
         lv3: []
       },
+      brands: [],
       loading: true,
       priceRange: {
         start: null,
@@ -115,6 +125,7 @@ export default defineComponent({
         productName: null,
         "order[lowestPrice]": null,
         page: 1,
+        brand: null,
         group: "product:simple"
       }
     }
@@ -153,11 +164,19 @@ export default defineComponent({
         this.loading = false;
       }
     },
+    async getBrands(category) {
+      try {
+        this.brands = (await api.getBrands({category: category})).list;
+      } catch (error) {
+        ElMessage.error(error.msg)
+      }
+    },
     switchCategory(cate, level) {
       if(cate && level){
         this.category[`lv${level}`] = cate.children;
       }
       this.dto.category = cate.categoryId
+      this.getBrands(cate.categoryId);
     },
     async getCategories() {
       try {

@@ -85,7 +85,7 @@
       </div>
       <div v-else-if="orderVo.ordersStatus == 'wait_receive'" class="manage-btn-content">
         <el-button type="primary" size="default" @click="optOrder('drawback')">退款</el-button>
-        <el-button type="primary" size="default" @click="optOrder('receive')">确认收货</el-button>
+        <el-button type="primary" size="default" @click="optOrder('finish')">确认收货</el-button>
       </div>
       <div v-else-if="orderVo.ordersStatus == 'finished'" class="manage-btn-content">
         <el-button type="primary"  @click="showCommentDialog = true">评价</el-button>

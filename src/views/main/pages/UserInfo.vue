@@ -138,7 +138,7 @@ import {
   LocationMarkerIcon,
 } from "@heroicons/vue/solid";
 
-export default {
+export default defineComponent({
   components: {
     PlusIcon,
     LogoutIcon,
@@ -177,8 +177,14 @@ export default {
         console.log(error.msg);
       }
     },
-    updatePwd() {
-      
+    async updatePwd() {
+      try {
+        await api.updatePwd(this.subject.newPrimary, this.subject.oldPrimary)
+        ElMessage.success("更改成功，请重新登陆")
+        this.logout();
+      } catch (error) {
+        ElMessage.error(error.msg)
+      }
     },
     uploadAvatarSuccess(resp) {
       this.userInfo.avatarUrl = resp.url;
@@ -190,7 +196,7 @@ export default {
       this.$router.push("/main");
     },
   },
-};
+});
 </script>
 <style lang="scss" scoped>
 .left-content {

@@ -16,4 +16,12 @@ export default {
   patchUserInfo(info) {
     return axios.patch(`/api/user_infos/${info.userId}`, info);
   },
+  updatePwd(newPwd,oldPwd) {
+    return axios.patch("/api/password",{},{
+      params: {
+        oldPwd: oldPwd,
+        newPwd: newPwd
+      }
+    })
+  }
 }
