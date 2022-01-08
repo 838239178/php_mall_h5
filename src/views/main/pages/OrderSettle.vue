@@ -141,7 +141,12 @@ export default defineComponent({
       try {
         await this.settleAllOrder()
         this.clearCars()
-        this.$router.push("/main/orderlist")
+        this.$router.push({
+          name: "orderlist",
+          params: {
+            status: "wait_pay"
+          }
+        })
       } catch (error) {
         console.log(error)
         ElMessage.error(error.msg)

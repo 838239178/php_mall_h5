@@ -13,7 +13,8 @@ export default createStore({
     token: preUserInfo.token || null,
     id: preUserInfo.id || null,
     role: preUserInfo.role || null,
-    defAddr: null
+    defAddr: null,
+    searchKeyword: null,
   },
   mutations: {
     setUser(state, info) {
@@ -30,9 +31,15 @@ export default createStore({
     },
     setDefAddr(state, addr) {
       state.defAddr = addr
+    },
+    setKeyword(state, str) {
+      state.searchKeyword = str
     }
   },
   actions: {
+    searchKeyword(state, value) {
+      state.commit("setKeyword", value)
+    }
   },
   modules: {
   }

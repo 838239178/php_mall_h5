@@ -135,6 +135,10 @@ export default defineComponent({
     "dto.page"() {this.getProducts()},
     "dto.order[lowestPrice]"() {this.getProducts()},
     "dto.lowestPrice[between]"() {this.getProducts()},
+    "$store.state.searchKeyword"(newValue) {
+      this.dto.productName = newValue
+      this.getProducts();
+    }
   },
   components: {ProductView},
   mounted() {

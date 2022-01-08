@@ -37,8 +37,8 @@ export default defineConfig({
     open: true,
     proxy: {
       '/api': {
-        target: 'http://150.158.82.154/api/',
-        // target: 'http://localhost:8000/api/',
+        // target: 'http://150.158.82.154/api/',
+        target: 'http://localhost:8000/api/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       },

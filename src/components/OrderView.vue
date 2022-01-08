@@ -94,7 +94,7 @@
         <el-button size="default" @click="optOrder('remove')">删除订单</el-button>
       </div>
     </div>
-    <comment-dialog v-model="showCommentDialog" :details="orderVo.details"/>
+    <comment-dialog v-if="!isSettle" v-model="showCommentDialog" :details="orderVo.details"/>
   </div>
 </template>
 <script lang="js">

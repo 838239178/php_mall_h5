@@ -60,7 +60,13 @@ export default {
     },
     toSearch(val) {
       if(val) {
-        this.$router.push('/main/search?keyword='+val);
+        this.$store.dispatch("searchKeyword", this.keyword)
+        this.$router.push({
+          name: 'search',
+          params: {
+            keyword: this.keyword
+          }
+        });
       }
     }
   },
