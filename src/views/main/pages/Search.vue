@@ -2,38 +2,48 @@
   <div class="search-content">
     <div class="cate-selector">
       <div style="text-align: left;" class="selector-title">所有分类</div>
-      <div class="flex justify-start space-x-4 text-sm my-3"> 
-        <span v-for="cat,i in category.lv1" :key="i"
-          @click="switchCategory(cat,2)"
+      <div class="flex justify-start space-x-4 text-sm my-3">
+        <span
+          v-for="cat,i in category.lv1"
+          :key="i"
+          @click="switchCategory(cat, 2)"
           :class="dto.category == cat.categoryId ? 'text-blue-500 hover:text-blue-400' : 'text-gray-500 hover:text-gray-400'"
-          class="underline cursor-pointer">
-          {{cat.categoryName}}
-        </span>
+          class="underline cursor-pointer"
+        >{{ cat.categoryName }}</span>
       </div>
-      <div v-if="category.lv2?.length > 0" class="flex justify-start space-x-4 text-sm italic my-3 ml-2"> 
-        <span v-for="cat,i in category.lv2" :key="i"
-          @click="switchCategory(cat,3)"
+      <div
+        v-if="category.lv2?.length > 0"
+        class="flex justify-start space-x-4 text-sm italic my-3 ml-2"
+      >
+        <span
+          v-for="cat,i in category.lv2"
+          :key="i"
+          @click="switchCategory(cat, 3)"
           :class="dto.category == cat.categoryId ? 'text-blue-500 hover:text-blue-400' : 'text-gray-500 hover:text-gray-400'"
-          class="underline cursor-pointer">
-          {{cat.categoryName}}
-        </span>
+          class="underline cursor-pointer"
+        >{{ cat.categoryName }}</span>
       </div>
-      <div v-if="category.lv3?.length > 0" class="flex justify-start space-x-4 italic text-sm my-3 ml-4"> 
-        <span v-for="cat,i in category.lv3" :key="i"
+      <div
+        v-if="category.lv3?.length > 0"
+        class="flex justify-start space-x-4 italic text-sm my-3 ml-4"
+      >
+        <span
+          v-for="cat,i in category.lv3"
+          :key="i"
           @click="switchCategory(cat)"
           :class="dto.category == cat.categoryId ? 'text-blue-500 hover:text-blue-400' : 'text-gray-500 hover:text-gray-400 '"
-          class="underline cursor-pointer">
-          {{cat.categoryName}}
-        </span>
+          class="underline cursor-pointer"
+        >{{ cat.categoryName }}</span>
       </div>
       <div style="text-align: left;" class="selector-title">品牌</div>
       <div class="flex justify-start space-x-4 text-sm italic my-3 ml-2">
-        <span v-for="brand,i in brands" :key="i"
+        <span
+          v-for="brand,i in brands"
+          :key="i"
           @click="dto.brand = brand.brandId"
           :class="dto.brand == brand.brandId ? 'text-blue-500 hover:text-blue-400' : 'text-gray-500 hover:text-gray-400'"
-          class="underline cursor-pointer">
-          {{brand.brandName}}
-        </span>
+          class="underline cursor-pointer"
+        >{{ brand.brandName }}</span>
       </div>
     </div>
     <div class="tool-bar">
@@ -63,15 +73,15 @@
             :page-size="20"
             :total="products.total"
             layout="prev, pager, next"
-            :pager-count="1">
-          </el-pagination>
+            :pager-count="1"
+          ></el-pagination>
         </el-col>
       </el-row>
     </div>
     <div v-loading="loading">
       <el-row :gutter="20" type="flex" justify="start">
         <el-col v-for="item in products.list" :key="item.productId" :span="7" :offset="0">
-          <product-view 
+          <product-view
             style="margin-top: 10px; width: 250px; height: 370px;"
             :id="item.productId"
             :title="item.productName"
@@ -81,9 +91,9 @@
             :brand="item.brand"
             :category="item.category"
             :tags="item.productTags"
-            @click="$router.push('/main/product?pid='+item.productId)"
+            @click="$router.push('/main/product?pid=' + item.productId)"
           />
-        </el-col>           
+        </el-col>
       </el-row>
     </div>
     <div class="w-full text-center mt-8">
@@ -92,9 +102,10 @@
         v-model:current-page="dto.page"
         :page-size="20"
         layout="prev, pager, next, jumper"
-        :total="products.total" background
-        :pager-count="7">
-      </el-pagination>
+        :total="products.total"
+        background
+        :pager-count="7"
+      ></el-pagination>
     </div>
   </div>
 </template>
@@ -104,8 +115,8 @@ import ProductView from '@/components/ProductView.vue'
 export default defineComponent({
   data() {
     return {
-      products:{
-        list:[],
+      products: {
+        list: [],
         total: 0,
       },
       category: {
@@ -113,7 +124,7 @@ export default defineComponent({
         lv2: [],
         lv3: []
       },
-      brands: [],
+      brands: [{brandName: "全部"}],
       loading: true,
       priceRange: {
         start: null,
@@ -131,22 +142,22 @@ export default defineComponent({
     }
   },
   watch: {
-    "dto.category"() {this.getProducts()},
-    "dto.page"() {this.getProducts()},
-    "dto.order[lowestPrice]"() {this.getProducts()},
-    "dto.lowestPrice[between]"() {this.getProducts()},
+    "dto.category"() { this.getProducts() },
+    "dto.page"() { this.getProducts() },
+    "dto.order[lowestPrice]"() { this.getProducts() },
+    "dto.lowestPrice[between]"() { this.getProducts() },
     "$store.state.searchKeyword"(newValue) {
       this.dto.productName = newValue
       this.getProducts();
     }
   },
-  components: {ProductView},
+  components: { ProductView },
   mounted() {
     this.getCategories();
-    if(this.$route.query.keyword) {
+    if (this.$route.query.keyword) {
       this.dto.productName = this.$route.query.keyword;
     }
-    if(this.$route.query.cid) {
+    if (this.$route.query.cid) {
       this.dto.category = this.$route.query.cid;
     }
     this.getProducts();
@@ -170,23 +181,30 @@ export default defineComponent({
     },
     async getBrands(category) {
       try {
-        this.brands = (await api.getBrands({category: category})).list;
+        let resp = await api.getBrands({ category: category })
+        this.brands = resp.list
+        this.brands.splice(0,0, {
+          brandName: "全部"
+        })
       } catch (error) {
+        console.debug(error)
         ElMessage.error(error.msg)
       }
     },
     switchCategory(cate, level) {
-      if(cate && level){
+      if (cate && level) {
         this.category[`lv${level}`] = cate.children;
       }
       this.dto.category = cate.categoryId
-      this.getBrands(cate.categoryId);
+      if (cate.categoryLevel == 1) {
+        this.getBrands(cate.categoryId);
+      }
     },
     async getCategories() {
       try {
-        let data = await api.getCategories({categoryLevel: 1});
+        let data = await api.getCategories({ categoryLevel: 1 });
         this.category.lv1 = data.list;
-        this.category.lv1.splice(0,0,{
+        this.category.lv1.splice(0, 0, {
           categoryName: "全部"
         })
       } catch (error) {
@@ -206,9 +224,9 @@ export default defineComponent({
   margin-top: 40px;
   margin-bottom: 40px;
   .price-text {
-    padding: 5px; 
-    color: grey; 
-    font-size: 14px; 
+    padding: 5px;
+    color: grey;
+    font-size: 14px;
     margin: 5px auto;
   }
   .el-button-group {
@@ -221,7 +239,7 @@ export default defineComponent({
 }
 .cate-selector {
   .selector-title {
-    color: gray;
+    color: rgb(83, 83, 83);
   }
 }
 </style>
