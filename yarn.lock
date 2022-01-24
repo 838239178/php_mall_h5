@@ -40,10 +40,10 @@
   resolved "https://registry.nlark.com/@ctrl/tinycolor/download/@ctrl/tinycolor-3.4.0.tgz#c3c5ae543c897caa9c2a68630bed355be5f9990f"
   integrity sha1-w8WuVDyJfKqcKmhjC+01W+X5mQ8=
 
-"@element-plus/icons-vue@^0.2.4":
-  version "0.2.4"
-  resolved "https://registry.npmmirror.com/@element-plus/icons-vue/download/@element-plus/icons-vue-0.2.4.tgz#dadcf72f0cea53dc83b7b7db80e1418716d7b02c"
-  integrity sha512-RsJNyL58rwxtsjeMy34o8txkL6UlME1stWsUlRpTac6UE9Bx9gdJvnDXbIKhOJqBLX17fBjmposdrn6VTqim2w==
+"@element-plus/icons-vue@^0.2.6":
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/@element-plus/icons-vue/-/icons-vue-0.2.6.tgz#28e48aa4abd5b02638b41c1d95a6e7f96bb23308"
+  integrity sha512-2gg7VCq4d2firgl7/aVym4Cx/wqKFwKybEQGJiiWJN4urW36+QdAEG1knqSD9qidbjhVp0Jnc9XdSTR1/4Whzw==
 
 "@headlessui/vue@^1.4.2":
   version "1.4.2"
@@ -76,10 +76,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@popperjs/core@^2.10.2":
-  version "2.11.0"
-  resolved "https://registry.npmmirror.com/@popperjs/core/download/@popperjs/core-2.11.0.tgz#6734f8ebc106a0860dff7f92bf90df193f0935d7"
-  integrity sha512-zrsUxjLOKAzdewIDRWy9nsV1GQsKBCWaGwsZQlCgr6/q+vjyZhFgqedLfFBuI9anTPEUT4APq9Mu0SZBTzIcGQ==
+"@popperjs/core@^2.11.2":
+  version "2.11.2"
+  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.2.tgz#830beaec4b4091a9e9398ac50f865ddea52186b9"
+  integrity sha512-92FRmppjjqz29VMJ2dn+xdyXZBrMlE42AV6Kq6BwjWV7CNUW1hs2FtxSNLQE+gJhaZ6AAmYuO9y8dshhcBl7vA==
 
 "@rollup/pluginutils@^4.1.1", "@rollup/pluginutils@^4.1.2":
   version "4.1.2"
@@ -231,18 +231,18 @@
   resolved "https://registry.npmmirror.com/@vue/shared/download/@vue/shared-3.2.26.tgz#7acd1621783571b9a82eca1f041b4a0a983481d9"
   integrity sha512-vPV6Cq+NIWbH5pZu+V+2QHE9y1qfuTq49uNWw4f7FDEeZaDU2H2cx5jcUZOAKW7qTrUS4k6qZPbMy1x4N96nbA==
 
-"@vueuse/core@^7.3.0":
-  version "7.5.1"
-  resolved "https://registry.npmmirror.com/@vueuse/core/download/@vueuse/core-7.5.1.tgz#3038a0ca6e16f6885d2457778260712180422526"
-  integrity sha512-GczfdTWqH483zkUHdDYiLm0Tn51OtsQXYc+eBKKIeolh0mgn682KbSYmkrjNytaF7qGc74YxMDAYjkPBW6V2Pg==
+"@vueuse/core@^7.5.4":
+  version "7.5.4"
+  resolved "https://registry.yarnpkg.com/@vueuse/core/-/core-7.5.4.tgz#c515c6795f1b8ab9a50e62e2f1aa75aac5f1ca14"
+  integrity sha512-PKmyHN2lZuttGgKmsoMMqiSojSYYKraszilP0gpQIGcLt2YoLABaG3VFjdPs2tY6DM+HG3o70HuzOMEQCY8fqQ==
   dependencies:
-    "@vueuse/shared" "7.5.1"
+    "@vueuse/shared" "7.5.4"
     vue-demi "*"
 
-"@vueuse/shared@7.5.1":
-  version "7.5.1"
-  resolved "https://registry.npmmirror.com/@vueuse/shared/download/@vueuse/shared-7.5.1.tgz#d88a8d8a4799c30e7dd4f965808e78b3793c3da6"
-  integrity sha512-zMQEuYJyTmr5Hj2rYgSbb4H/cSI8mdaa9dUuw20j6rPV+xLV11y7vCyIkxo31uODDr0p77FMlProKzNDiK9rAA==
+"@vueuse/shared@7.5.4":
+  version "7.5.4"
+  resolved "https://registry.yarnpkg.com/@vueuse/shared/-/shared-7.5.4.tgz#4285e5c47fe5f2d608f115bf2aa26154f474e881"
+  integrity sha512-750RnGUEgg1+K4jGVkv7M5UOStAa/IjAInV6BugyBOvRYL2l1lcIDUi4V/qIKTlhd2oUAByCEnlqIpFD2a3tfw==
   dependencies:
     vue-demi "*"
 
@@ -518,15 +518,15 @@ electron-to-chromium@^1.4.17:
   resolved "https://registry.npmmirror.com/electron-to-chromium/download/electron-to-chromium-1.4.31.tgz#8d5ccc3f8253cd142b07afaa84f200fd33a7f2a6"
   integrity sha512-t3XVQtk+Frkv6aTD4RRk0OqosU+VLe1dQFW83MDer78ZD6a52frgXuYOIsLYTQiH2Lm+JB2OKYcn7zrX+YGAiQ==
 
-element-plus@^1.3.0-beta.1:
-  version "1.3.0-beta.1"
-  resolved "https://registry.npmmirror.com/element-plus/download/element-plus-1.3.0-beta.1.tgz#4df67fcedb0c13d14c9f54eea7b739109f5df49f"
-  integrity sha512-q3vMaKElPpuSTeIF7kuDmMOE+N1YVCCIG3fshXpz6qgjnxPbgZumVM0qGfhr8DTu9JxRbBoDok49dqtX/BWn3w==
+element-plus@^1.3.0-beta.7:
+  version "1.3.0-beta.7"
+  resolved "https://registry.yarnpkg.com/element-plus/-/element-plus-1.3.0-beta.7.tgz#8c589d5f6e945dc36181571cacd617f93d93f8f5"
+  integrity sha512-zrkw0OqhJG70oA+O796HK0IU1KSHboQbHcSeQVqhWLxmv/rEHOzEAcRKKeOACQFoJY/EU7CKJVjlV+Gaww1ccA==
   dependencies:
     "@ctrl/tinycolor" "^3.4.0"
-    "@element-plus/icons-vue" "^0.2.4"
-    "@popperjs/core" "^2.10.2"
-    "@vueuse/core" "^7.3.0"
+    "@element-plus/icons-vue" "^0.2.6"
+    "@popperjs/core" "^2.11.2"
+    "@vueuse/core" "^7.5.4"
     async-validator "^4.0.7"
     dayjs "^1.10.7"
     lodash "^4.17.21"
