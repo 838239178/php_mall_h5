@@ -121,10 +121,10 @@
   resolved "https://registry.npmmirror.com/@types/parse-json/download/@types/parse-json-4.0.0.tgz?cache=0&sync_timestamp=1637269948744&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Fparse-json%2Fdownload%2F%40types%2Fparse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha1-L4u0QUNNFjs1+4/9zNcTiSf/uMA=
 
-"@types/tailwindcss@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@types/tailwindcss/-/tailwindcss-3.0.1.tgz#366d4028a3b605a5e63253b3dea34c425d6f6d48"
-  integrity sha512-0uQS44Y4HYpANZO+xrrrQg9P82v6ZjGcZihbH5UpsZXCGQDMyY8oWUBhsx5LGJcJ/Nyfl3WdGq/4pXHNNyeD4Q==
+"@types/tailwindcss@^3.0.3":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@types/tailwindcss/-/tailwindcss-3.0.3.tgz#909d907d7e4825d053162a582777e9d096d584e2"
+  integrity sha512-SWOyuROXgBlH1MQfl5gAcjunX37l4z1bx1lrQGh2nHqJyKU/FWYymKoBOgqGjyGamiZHtYQKoNgf2IahONL+og==
 
 "@types/throttle-debounce@^2.1.0":
   version "2.1.0"
